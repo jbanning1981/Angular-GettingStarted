@@ -1,17 +1,20 @@
 <div class='card'>
     <div class='card-header'>
-        Product List
+        {{pageTitle}}
     </div>
     <div class='card-body'>
         <div class='row'>
-            <div class='col-12 form-group'>
-                <form class="form-inline">
-                    <div class='form-group'>
-                        <label for='filterText'>Filter By</label>
-                        <input type='text' class='form-control' placeholder="Filter by name..." />
+            <form class="col-12">                        
+                <div class='form-group row'>
+                    <label class="col-sm-2 col-lg-1 col-form-label" for='filterText'>Filter By</label>
+                    <div class="col-sm-10 col-lg-11">
+                        <input type='text' 
+                            class='form-control' 
+                            placeholder="Filter by name..." 
+                            [(ngModel)]="filterText"/>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>            
         </div>
         <div class='row'>
             <div class='col-6'>
@@ -21,7 +24,7 @@
         <div class='row'>
             <div class='col-12'>
                 <div class='table-responsive'>
-                    <table class='table table-sm table-hover'>
+                    <table class='table table-sm table-hover' *ngIf='products && products.length'>
                         <thead>
                             <tr>
                                 <th>

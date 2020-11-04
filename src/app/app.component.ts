@@ -3,10 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'store-root',
   template: `
+      <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+        <div class="navbar-brand">
+          ACME 
+        </div>
+      </nav>  
     <div class="container-fluid">
-      <nav class="nav">
-        
-      </nav>
       <pm-products></pm-products>
     </div>      
   `
