@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'pm-products',
     templateUrl: './product-list.component.html'
 })
 export class ProductListComponent {
-  public pageTitle: string = 'Product List';
-  public filterText: string = '';
+  pageTitle: string = 'Product List';
+  filterText: string = '';
   imageWidth: number = 50;
   imageMargin: number = 2;
-  public products: any[] = [  
+  showImage: boolean = true;
+  products: any[] = [  
     {
     "productId": 1,
     "productName": "Leaf Rake",
@@ -30,4 +32,8 @@ export class ProductListComponent {
     "starRating": 4.2,
     "imageUrl": "assets/images/garden_cart.png"
   },];
+
+  toggleImage() {
+    this.showImage = !this.showImage;
+  };
 }
